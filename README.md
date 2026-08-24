@@ -29,8 +29,6 @@ The repository may contain multiple research groups. Each project has its own au
 
 Authors and co-authors are listed within their respective research projects to accurately represent their contribution to each study.
 
----
-
 ## Research Projects
 
 List of research works with their identifiers, titles, journals, and current status.
@@ -39,8 +37,6 @@ List of research works with their identifiers, titles, journals, and current sta
 | ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------- | ---------- | ----------- |
 | `C15-2026` | [A Reproducible Methodological Framework for Prosecutorial Congestion RiskPrediction Using Explainable Machine Learning and Temporal Validation](./C15-2026-fiscal/) | Pending Decision     | `Revision` | 18-jul-2026 |
 | `C21-2026` | [Early Prediction of Low Birth Weight: Characterizing Predictive Performance in a National Peruvian Cohort (2015–2025)](./C21-202510-birth/)                         | Pending Decision     | `Revision` | 29-jul-2026 |
-
----
 
 ## Repository Guidelines
 
@@ -66,8 +62,6 @@ research/
 ```
 
 The root README provides an overview of the research projects, while each project README contains the detailed information specific to that research.
-
----
 
 ## License
 
