@@ -1,0 +1,9 @@
+data/
+*.csv
+*.xlsx
+*.xls
+*.pkl
+*.joblib
+*.zip
+figures/generated/
+reports/generated/

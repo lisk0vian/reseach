@@ -36,7 +36,7 @@ List of research works with their identifiers, titles, journals, and current sta
 | Research   | Title                                                                                                                                                                | Journal / Conference | Status     | Last Update |
 | ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------- | ---------- | ----------- |
 | `C15-2026` | [A Reproducible Methodological Framework for Prosecutorial Congestion RiskPrediction Using Explainable Machine Learning and Temporal Validation](./C15-2026-fiscal/) | Pending Decision     | `Revision` | 18-jul-2026 |
-| `C21-2026` | [Early Prediction of Low Birth Weight: Characterizing Predictive Performance in a National Peruvian Cohort (2015–2025)](./C21-202510-birth/)                         | Pending Decision     | `Revision` | 29-jul-2026 |
+| `C21-2026` | [Early Prediction of Low Birth Weight: Characterizing Predictive Performance in a National Peruvian Cohort (2015–2025)](./C21-202610-birth/)                         | Pending Decision     | `Revision` | 24-aug-2026 |
 
 ## Repository Guidelines
 
