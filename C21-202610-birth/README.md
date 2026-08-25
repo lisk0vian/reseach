@@ -17,6 +17,10 @@ This research studies early prediction of low birth weight in a national Peruvia
   <br />
    [ORCID](https://orcid.org/) · [Google Scholar](https://scholar.google.com/citations?hl=es&user=wV2fQskAAAAJ) · [LinkedIn](https://www.linkedin.com/in/jeremi-aron/) · [GitHub](https://github.com/lisk0vian)
 
+* **Arnold Albert Huaman Zamora** — Co-author
+  <br />
+  [ORCID](https://orcid.org/0009-0006-8186-9251)
+
 **Affiliation**: [Servicio Nacional de Adiestramiento en Trabajo Industrial, Lima, Perú](https://www.senati.edu.pe/especialidades/tecnologias-de-la-informacion/ingenieria-de-software-con-inteligencia-artificial)
 
 ## Dates
