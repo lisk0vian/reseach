@@ -18,6 +18,52 @@ os.makedirs(OUT, exist_ok=True)
 
 BLUE, ORANGE = "#1f5c99", "#c2571a"
 INK, MUTED, GRID = "#2c3138", "#6b727c", "#d7dbe0"
+# Wash used to mark the partial 2026 file wherever it is plotted alongside
+# complete years. It is a surface, never a data colour.
+PARTIAL = "#eceef1"
+
+# The two data hues pass all six checks of the palette validator against a white
+# surface (worst adjacent pair dE 20.4 protan / 28.7 normal vision, both above
+# the thresholds), so identity survives colour-vision deficiency and greyscale
+# print. They are used categorically where two series share an axis and
+# divergingly (blue below zero, orange above, neutral rule at zero) where the
+# quantity has a sign. No third data hue is introduced: figures that would need
+# one use small multiples instead.
+
+
+def wilson(k, n, z=1.96):
+    """Wilson score interval for a binomial proportion. Returns (lo, hi)."""
+    if n == 0:
+        return (np.nan, np.nan)
+    p = k / n
+    c = (p + z * z / (2 * n)) / (1 + z * z / n)
+    h = z / (1 + z * z / n) * np.sqrt(p * (1 - p) / n + z * z / (4 * n * n))
+    return (max(0.0, c - h), min(1.0, c + h))
+
+
+# Readable English labels for the engineered feature names. The raw column name
+# is kept in additional_file_3_feature_glossary.md so that a reader reproducing
+# the pipeline can map each label back to the exact column.
+FEATURE_LABELS = {
+    "freq_inter_distrito_tipo_caso": "Judicial district × case type (freq.)",
+    "freq_especializada": "Specialised-unit designation (freq.)",
+    "freq_prov_pjfs": "Province (freq.)",
+    "tipo_fiscalia_SUPERIOR": "Office type: superior",
+    "freq_inter_tipo_fiscalia_especialidad": "Office type × specialty (freq.)",
+    "freq_especialidad": "Specialty (freq.)",
+    "hist_saldo_mean_prev_dist_pjfs": "Lagged mean case balance, district",
+    "freq_dist_pjfs": "Judicial district (freq.)",
+    "freq_tipo_caso": "Case type (freq.)",
+    "ubigeo_pjfs": "Geographic code (ubigeo)",
+    "tipo_caso_DENUNCIA": "Case type: complaint",
+    "hist_ingresado_mean_prev_dist_pjfs": "Lagged mean cases received, district",
+    "especializada_NO_ESPECIFICADO": "Specialised unit: not specified",
+    "flag_nulo_especializada": "Missingness flag: specialised unit",
+}
+
+
+def nice_feature(name):
+    return FEATURE_LABELS.get(name, name)
 
 plt.rcParams.update({
     "figure.dpi": 300, "savefig.dpi": 300, "savefig.bbox": "tight",
@@ -53,7 +99,7 @@ def save(fig, name):
 def fig_framework():
     stages = [
         ("1. Data integration and quality audit", "9,593 annual records, 2019-2026, 16 raw fields"),
-        ("2. Temporal availability audit", "12 variables excluded before any modelling"),
+        ("2. Temporal availability audit", "12 variables dropped: 11 unavailable, 1 collinear"),
         ("3. Proxy label and sensitivity scenarios", "P75/P25 principal; P70/P30 to P85/P15 tested"),
         ("4. Consensus feature selection", "6 selectors fitted on 2019-2022, checked on 2023"),
         ("5. Temporal training and model selection", "walk-forward cross-validation, 7 model families"),
@@ -98,14 +144,18 @@ def fig_protocol():
     n = {2024: 1195, 2025: 1199, 2026: 1123}
     for _, r in p.iterrows():
         pass
-    fig, ax = plt.subplots(figsize=(6.6, 2.5))
+    fig, ax = plt.subplots(figsize=(6.2, 2.5))
     for i, yr in enumerate(years):
         k = role[yr]
         ax.add_patch(FancyBboxPatch((i, 0.55), 0.9, 0.75,
                                     boxstyle="round,pad=0.01,rounding_size=0.06",
                                     facecolor=colour[k], edgecolor="#b9c1c9", linewidth=0.8))
-        ax.text(i + 0.45, 0.92, str(yr), ha="center", va="center", fontsize=8.4,
-                fontweight="bold", color="white" if k in ("T", "V", "E") else INK)
+        ax.text(i + 0.45, 0.97 if k == "X" else 0.92, str(yr), ha="center", va="center",
+                fontsize=8.4, fontweight="bold",
+                color="white" if k in ("T", "V", "E") else INK)
+        if k == "X":
+            ax.text(i + 0.45, 0.76, "Jan-May", ha="center", va="center", fontsize=6.4,
+                    color=MUTED)
     # feature-selection sub-window
     ax.add_patch(FancyBboxPatch((0, 0.20), 3.9, 0.24, boxstyle="round,pad=0.01,rounding_size=0.05",
                                 facecolor="none", edgecolor=BLUE, linewidth=1.0, linestyle="--"))
@@ -140,20 +190,34 @@ def fig_temporal():
     a.set_ylabel("Million cases")
     a.set_title("Annual workload")
     a.set_ylim(0, 1.95)
+    a.set_xlim(-0.6, len(t) - 0.4)
+    a.axvspan(len(t) - 1.5, len(t) - 0.4, color=PARTIAL, linewidth=0, zorder=0)
+    a.text(len(t) - 1, 0.70, "partial\nyear\n(Jan-May)", fontsize=6.4, color=MUTED,
+           ha="center", va="bottom", linespacing=1.25)
     a.legend(loc="upper left", ncol=1)
-    a.annotate("partial year", xy=(7, 0.68), xytext=(5.9, 1.15), fontsize=7, ha="center",
-               color=MUTED, arrowprops=dict(arrowstyle="-|>", color=MUTED, linewidth=0.7))
     tidy(a)
     b = axes[1]
-    b.plot(t.anio, t.riesgo_pct, marker="o", markersize=4.5, color=BLUE, linewidth=1.8)
+    # 2019-2025 are complete years and are joined by a solid line. The 2026 file
+    # covers January-May only, so the segment leading to it is drawn dashed with
+    # a hollow marker: connecting it as a trend would assert the very continuity
+    # that Section 4.1 denies.
+    full = t[t.anio <= 2025]
+    b.axvspan(2025.5, 2026.55, color=PARTIAL, linewidth=0, zorder=0)
+    b.plot(full.anio, full.riesgo_pct, marker="o", markersize=4.5, color=BLUE, linewidth=1.8)
+    b.plot([2025, 2026], [t.riesgo_pct.iloc[-2], t.riesgo_pct.iloc[-1]],
+           color=BLUE, linewidth=1.4, linestyle=(0, (3, 2)))
+    b.plot([2026], [t.riesgo_pct.iloc[-1]], marker="o", markersize=5.4,
+           markerfacecolor="white", markeredgecolor=BLUE, markeredgewidth=1.5)
     b.axhline(14.68, color=MUTED, linestyle=":", linewidth=1.0)
-    b.text(2019.05, 15.1, "pooled prevalence 14.68%", fontsize=7, color=MUTED)
-    for xx, yy, off in [(2019, 11.54, (6, 7)), (2020, 19.44, (0, 8)), (2026, 20.21, (-6, 8))]:
+    b.text(2019.05, 15.2, "pooled prevalence 14.68%", fontsize=6.8, color=MUTED)
+    for xx, yy, off in [(2019, 11.54, (7, 6)), (2020, 19.44, (0, 8)), (2026, 20.21, (-2, 9))]:
         b.annotate("%.1f%%" % yy, (xx, yy), textcoords="offset points",
                    xytext=off, ha="center", fontsize=7, color=INK)
+    b.text(2026.0, 8.7, "partial\nyear", fontsize=6.6, color=MUTED, ha="center", va="bottom")
     b.set_ylabel("Proxy risk prevalence (%)")
     b.set_title("Label prevalence by year")
     b.set_ylim(8, 23)
+    b.set_xlim(2018.5, 2026.6)
     b.set_xticks(t.anio)
     b.set_xticklabels(t.anio, rotation=45)
     tidy(b)
@@ -162,23 +226,44 @@ def fig_temporal():
 
 # ------------------------------------------------- Fig 4: walk-forward validation
 def fig_walkforward():
+    """Small multiples, one metric per panel.
+
+    Three metrics on one axis would need a third data hue that no accessible
+    palette supplies alongside blue and orange; one panel each also lets every
+    metric use the y-range that makes its own variation legible.
+
+    The 2026 fold evaluates a five-month file. Section 3.6 forbids it from
+    supporting any performance claim, so it is separated from the six
+    complete-year folds by a wash, a hollow marker and a dashed connector, and
+    the range annotated on each panel is computed over 2020-2025 only.
+    """
     w = tbl("Tabla_34_Validacion_Walk-Forward_temporal__anio_a_anio_.xlsx")
-    fig, ax = plt.subplots(figsize=(6.6, 2.6))
-    ax.plot(w.eval_year, w.roc_auc, marker="o", markersize=4.5, color=BLUE,
-            linewidth=1.8, label="ROC-AUC")
-    ax.plot(w.eval_year, w.f1, marker="s", markersize=4.5, color=ORANGE,
-            linewidth=1.8, linestyle="--", label="F1-score")
-    ax.plot(w.eval_year, w.pr_auc, marker="^", markersize=4.5, color=MUTED,
-            linewidth=1.3, linestyle=":", label="PR-AUC")
-    for xx, yy in [(w.eval_year.iloc[0], w.roc_auc.iloc[0]), (w.eval_year.iloc[-1], w.roc_auc.iloc[-1])]:
-        ax.annotate("%.3f" % yy, (xx, yy), textcoords="offset points", xytext=(0, 8),
-                    ha="center", fontsize=7, color=INK)
-    ax.set_xticks(w.eval_year)
-    ax.set_ylim(0.4, 1.0)
-    ax.set_xlabel("Evaluation year (trained on all previous years)")
-    ax.set_ylabel("Score")
-    ax.legend(ncol=3, loc="lower right")
-    tidy(ax)
+    full = w[w.eval_year <= 2025]
+    metrics = [("roc_auc", "ROC-AUC", (0.78, 0.95)),
+               ("f1", "F1-score", (0.45, 0.72)),
+               ("pr_auc", "PR-AUC", (0.42, 0.80))]
+    fig, axes = plt.subplots(3, 1, figsize=(6.6, 4.6), sharex=True)
+    for ax, (col, name, ylim) in zip(axes, metrics):
+        ax.axvspan(2025.5, 2026.5, color=PARTIAL, linewidth=0, zorder=0)
+        ax.plot(full.eval_year, full[col], marker="o", markersize=4.6, color=BLUE,
+                linewidth=1.8)
+        ax.plot([2025, 2026], [w[col].iloc[-2], w[col].iloc[-1]], color=BLUE,
+                linewidth=1.3, linestyle=(0, (3, 2)))
+        ax.plot([2026], [w[col].iloc[-1]], marker="o", markersize=5.6,
+                markerfacecolor="white", markeredgecolor=BLUE, markeredgewidth=1.5)
+        lo, hi = full[col].min(), full[col].max()
+        ax.axhspan(lo, hi, color=BLUE, alpha=0.06, linewidth=0, zorder=0)
+        ax.set_ylabel(name, fontsize=8)
+        ax.set_ylim(*ylim)
+        ax.annotate("six complete-year folds: %.3f-%.3f" % (lo, hi),
+                    xy=(0.015, 0.90), xycoords="axes fraction", fontsize=6.9,
+                    color=MUTED, va="top")
+        tidy(ax)
+    axes[0].text(2026, axes[0].get_ylim()[0] + 0.006, "partial\nyear", fontsize=6.4,
+                 color=MUTED, ha="center", va="bottom")
+    axes[-1].set_xticks(w.eval_year)
+    axes[-1].set_xlabel("Evaluation year (trained on every preceding year)")
+    fig.subplots_adjust(hspace=0.16)
     save(fig, "fig04_walkforward.png")
 
 
@@ -194,9 +279,17 @@ def fig_learning():
             linewidth=1.8, linestyle="--", label="Walk-forward CV F1")
     ax.fill_between(lc.train_size, lc.cv_f1_mean - lc.cv_f1_std,
                     lc.cv_f1_mean + lc.cv_f1_std, color=BLUE, alpha=0.15, linewidth=0)
-    ax.annotate("persistent generalisation gap\n(0.41 at the largest sample)",
-                xy=(4050, 0.69), xytext=(2100, 0.72), fontsize=7.2, color=MUTED,
-                arrowprops=dict(arrowstyle="-|>", color=MUTED, linewidth=0.8))
+    # Draw the gap the text quotes instead of pointing at empty space.
+    xg = lc.train_size.iloc[-1]
+    ytop, ybot = lc.train_f1_mean.iloc[-1], lc.cv_f1_mean.iloc[-1]
+    ax.annotate("", xy=(xg, ytop), xytext=(xg, ybot),
+                arrowprops=dict(arrowstyle="<|-|>", color=MUTED, linewidth=0.9,
+                                shrinkA=1, shrinkB=1))
+    ax.annotate("persistent generalisation gap\n%.2f at the largest sample" % (ytop - ybot),
+                xy=(xg, (ytop + ybot) / 2), xytext=(-10, 0), textcoords="offset points",
+                ha="right", va="center", fontsize=7.2, color=MUTED)
+    ax.text(0.015, 0.03, "shaded bands: $\\pm$1 SD across walk-forward folds",
+            transform=ax.transAxes, fontsize=6.6, color=MUTED)
     ax.set_xlabel("Training records")
     ax.set_ylabel("F1-score")
     ax.set_ylim(0, 1.05)
@@ -207,42 +300,97 @@ def fig_learning():
 
 # ------------------------------------ Fig 6: reliability with signed deviation
 def fig_calibration():
+    """Three panels, because two of them would misreport the result.
+
+    A signed-deviation panel alone encodes the size of each bin's error but not
+    its weight, so the tallest bar is the one resting on ten units while the bin
+    holding 932 of the 1,199 units is almost invisible. Panel (a) therefore
+    scales each marker by n and carries a Wilson interval, and panel (c) plots
+    the n-weighted contribution to the expected calibration error, which is what
+    the aggregate figure of 0.089 actually sums.
+    """
     r = tbl("Tabla_49_Bins_del_reliability_diagram__confianza_vs_tasa_observada_.xlsx")
     r = r[r.n > 0].copy()
     r["signed"] = r.confianza_promedio - r.tasa_observada
-    fig, axes = plt.subplots(1, 2, figsize=(6.9, 3.0))
+    r["events"] = (r.n * r.tasa_observada).round().astype(int)
+    total_n = int(r.n.sum())
+    r["contrib"] = r.n * r.signed.abs() / total_n
+    ece = r.contrib.sum()
+    under = r.loc[r.signed < 0, "contrib"].sum()
+    ci = [wilson(k, n) for k, n in zip(r.events, r.n)]
+    err_lo = r.tasa_observada.values - np.array([c[0] for c in ci])
+    err_hi = np.array([c[1] for c in ci]) - r.tasa_observada.values
+
+    fig, axes = plt.subplots(1, 3, figsize=(6.5, 2.9))
+
     a = axes[0]
-    a.plot([0, 1], [0, 1], color=MUTED, linestyle=":", linewidth=1.1)
-    a.text(0.70, 0.79, "perfect\ncalibration", fontsize=7, color=MUTED, rotation=40,
+    a.plot([0, 1], [0, 1], color=MUTED, linestyle=":", linewidth=1.1, zorder=1)
+    a.text(0.74, 0.86, "perfect\ncalibration", fontsize=6.2, color=MUTED, rotation=42,
            ha="center", va="center")
-    a.plot(r.confianza_promedio, r.tasa_observada, marker="o", markersize=5,
-           color=BLUE, linewidth=1.8)
-    a.annotate("every bin above 0.6 falls\nwell below the diagonal",
-               xy=(0.761, 0.30), xytext=(0.40, 0.14), fontsize=7.2, color=INK,
-               arrowprops=dict(arrowstyle="-|>", color=MUTED, linewidth=0.8))
-    a.set_xlabel("Mean predicted probability")
-    a.set_ylabel("Observed proxy risk rate")
-    a.set_title("Reliability, test 2025")
-    a.set_xlim(0, 1)
-    a.set_ylim(0, 1.02)
+    a.errorbar(r.confianza_promedio, r.tasa_observada, yerr=[err_lo, err_hi],
+               fmt="none", ecolor=MUTED, elinewidth=0.8, capsize=1.8, zorder=2)
+    a.plot(r.confianza_promedio, r.tasa_observada, color=BLUE, linewidth=1.3, zorder=3)
+    # Marker area encodes the bin size, so the bin holding 932 of the 1,199 units
+    # no longer looks like the one holding 10. Exact counts are labelled in (b).
+    a.scatter(r.confianza_promedio, r.tasa_observada, s=10 + 170 * r.n / total_n,
+              color=BLUE, edgecolor="white", linewidth=0.7, zorder=4)
+    a.annotate("marker area\n$\\propto$ bin size", xy=(0.011, 0.072),
+               xytext=(0.20, 0.055), fontsize=6.2, color=MUTED, va="center",
+               arrowprops=dict(arrowstyle="-|>", color=MUTED, linewidth=0.7))
+    a.set_xlabel("Mean predicted probability", fontsize=7.0)
+    a.set_ylabel("Observed proxy risk rate", fontsize=7.0)
+    a.set_title("(a) Reliability", fontsize=8)
+    a.set_xlim(-0.03, 1.03)
+    a.set_ylim(-0.03, 1.03)
+    a.set_xticks([0, 0.25, 0.5, 0.75, 1.0])
+    a.tick_params(labelsize=6.6)
     tidy(a)
+
     b = axes[1]
     cols = [ORANGE if v > 0 else BLUE for v in r.signed]
-    b.bar(r.confianza_promedio, r.signed, width=0.075, color=cols)
+    b.bar(r.confianza_promedio, r.signed, width=0.070, color=cols)
     b.axhline(0, color=MUTED, linewidth=0.9)
-    b.set_xlabel("Mean predicted probability")
-    b.set_ylabel("Predicted minus observed")
-    b.set_title("Direction of miscalibration")
-    b.set_xlim(0, 1)
-    b.set_ylim(-0.16, 0.62)
-    b.text(0.06, 0.50, "over-estimation\n(predicted > observed)", fontsize=7.2,
-           color=ORANGE, va="center")
-    b.text(0.06, -0.125, "under-estimation", fontsize=7.2, color=BLUE)
-    b.annotate("MCE = 0.461", xy=(0.761, 0.461), xytext=(0.50, 0.545), fontsize=7,
-               color=INK, ha="center",
-               arrowprops=dict(arrowstyle="-|>", color=MUTED, linewidth=0.8))
+    for _, row in r.iterrows():
+        off = 3 if row.signed > 0 else -8
+        b.annotate("%d" % row.n, (row.confianza_promedio, row.signed),
+                   textcoords="offset points", xytext=(0, off), ha="center",
+                   fontsize=5.4, color=MUTED)
+    b.set_xlabel("Mean predicted probability", fontsize=7.0)
+    b.set_ylabel("Predicted $-$ observed", fontsize=7.0)
+    b.set_title("(b) Signed deviation", fontsize=8)
+    b.set_xlim(-0.03, 1.03)
+    b.set_ylim(-0.19, 0.62)
+    b.set_xticks([0, 0.25, 0.5, 0.75, 1.0])
+    b.tick_params(labelsize=6.6)
+    b.annotate("MCE 0.461\nrests on n=10", xy=(0.761, 0.470), xytext=(0.40, 0.575),
+               fontsize=6.2, color=INK, ha="center",
+               arrowprops=dict(arrowstyle="-|>", color=MUTED, linewidth=0.7))
     tidy(b)
-    fig.subplots_adjust(wspace=0.34)
+
+    c = axes[2]
+    c.bar(r.confianza_promedio, r.contrib, width=0.070, color=cols)
+    c.axhline(0, color=MUTED, linewidth=0.9)
+    share_low = 100 * r.contrib.iloc[0] / ece
+    c.annotate("932 units here\nsupply %.0f%% of ECE" % share_low,
+               xy=(0.05, r.contrib.iloc[0] * 0.92), xytext=(0.30, 0.0455), fontsize=6.2,
+               color=INK, arrowprops=dict(arrowstyle="-|>", color=MUTED, linewidth=0.7))
+    c.set_xlabel("Mean predicted probability", fontsize=7.0)
+    c.set_ylabel(r"$(n_b/n)\times|$deviation$|$", fontsize=7.0)
+    c.set_title("(c) Weighted contribution", fontsize=8)
+    c.set_xlim(-0.03, 1.03)
+    c.set_ylim(0, 0.060)
+    c.set_xticks([0, 0.25, 0.5, 0.75, 1.0])
+    c.tick_params(labelsize=6.6)
+    tidy(c)
+
+    handles = [plt.Rectangle((0, 0), 1, 1, facecolor=BLUE),
+               plt.Rectangle((0, 0), 1, 1, facecolor=ORANGE)]
+    fig.legend(handles,
+               ["under-estimation: %.0f%% of the ECE of %.3f" % (100 * under / ece, ece),
+                "over-estimation: %.0f%%" % (100 * (ece - under) / ece)],
+               loc="lower center", bbox_to_anchor=(0.5, 0.0), ncol=2,
+               handlelength=1.1, fontsize=7)
+    fig.subplots_adjust(wspace=0.46, bottom=0.30, top=0.90, left=0.09, right=0.985)
     save(fig, "fig06_calibration.png")
 
 
@@ -272,7 +420,7 @@ def fig_strata():
     a = axes[0]
     bars = a.bar(range(len(g)), g.observed * 100, color=BLUE, width=0.62)
     a.axhline(14.35, color=MUTED, linestyle=":", linewidth=1.0)
-    a.text(-0.45, 16.2, "base rate 14.35%", fontsize=7, color=MUTED, ha="left")
+    a.text(3.42, 15.6, "base rate 14.35%", fontsize=7, color=MUTED, ha="right")
     for i, (rect, row) in enumerate(zip(bars, g.itertuples())):
         a.annotate("%.1f%%\n(n=%d)" % (row.observed * 100, row.n),
                    (rect.get_x() + rect.get_width() / 2, rect.get_height()),
@@ -343,16 +491,22 @@ def fig_dca():
             label="Flag every unit")
     ax.axhline(0, color=MUTED, linewidth=1.1, linestyle=":")
     ax.text(0.015, 0.008, "Flag no unit", fontsize=7.4, color=MUTED)
-    ax.plot([tau], [nb_op], marker="D", markersize=6.5, color=ORANGE,
-            markeredgecolor="white", markeredgewidth=1.0, zorder=5)
+    # The operating point belongs to the model series, so it carries the model's
+    # colour; only its shape distinguishes it. Painting it orange would assign it
+    # to the "flag every unit" strategy it has nothing to do with.
+    ax.plot([tau], [nb_op], marker="D", markersize=6.5, color=BLUE,
+            markeredgecolor="white", markeredgewidth=1.2, zorder=5)
     ax.annotate("operating point $\\tau$ = 0.65\nnet benefit = %.3f (negative)" % nb_op,
                 xy=(tau, nb_op), xytext=(0.38, -0.135), fontsize=7.4, color=INK,
                 arrowprops=dict(arrowstyle="-|>", color=MUTED, linewidth=0.9))
+    ax.text(0.985, 0.02, "grid rows reconstructed from fixed-width reliability bins;\n"
+                         "the operating point is exact",
+            transform=ax.transAxes, fontsize=6.3, color=MUTED, ha="right", va="bottom")
     lo = d[d.delta > 0].pt.min()
     hi = d[d.delta > 0].pt.max()
     ax.axvspan(lo, hi, color=BLUE, alpha=0.07, linewidth=0)
     ax.text((lo + hi) / 2, 0.088, "model preferred\n$p_t \\in$ [%.1f, %.1f]" % (lo, hi),
-            ha="center", fontsize=7.4, color=BLUE)
+            ha="center", fontsize=7.4, color=MUTED)
     ax.set_xlabel("Threshold probability $p_t$")
     ax.set_ylabel("Net benefit")
     ax.set_xlim(0, 0.95)
@@ -367,22 +521,28 @@ def fig_dca():
 def fig_importance():
     p = tbl("Tabla_50_Permutation_Importance__test_2025_.xlsx").head(12)[::-1]
     s = tbl("Tabla_51_Ranking_SHAP_global.xlsx").head(12)[::-1]
-    fig, axes = plt.subplots(1, 2, figsize=(6.9, 3.6))
-    for ax, dat, val, ttl, col in [
-            (axes[0], p, "importance_mean", "Permutation importance\n(XGBoost, test 2025)", BLUE),
-            (axes[1], s, "mean_abs_shap", "Mean absolute SHAP\n(LightGBM-Optuna, test 2025)", ORANGE)]:
-        ax.barh(range(len(dat)), dat[val], color=col, height=0.66)
+    fig, axes = plt.subplots(1, 2, figsize=(5.6, 3.6))
+    for ax, dat, val, err, ttl, col in [
+            (axes[0], p, "importance_mean", "importance_std",
+             "Permutation importance\n(XGBoost, test 2025)", BLUE),
+            (axes[1], s, "mean_abs_shap", None,
+             "Mean absolute SHAP\n(LightGBM-Optuna, test 2025)", ORANGE)]:
+        xerr = dat[err] if err and err in dat.columns else None
+        ax.barh(range(len(dat)), dat[val], color=col, height=0.66,
+                xerr=xerr, error_kw=dict(ecolor=MUTED, elinewidth=0.8, capsize=1.8))
         ax.set_yticks(range(len(dat)))
-        ax.set_yticklabels([(f[:27] + "..." if len(f) > 30 else f) for f in dat.feature],
-                           fontsize=6.4)
+        # Full readable labels, never truncated; the raw column names are given in
+        # additional_file_3_feature_glossary.md.
+        ax.set_yticklabels([nice_feature(f) for f in dat.feature], fontsize=6.3)
         ax.set_title(ttl, fontsize=8)
         ax.spines[["top", "right"]].set_visible(False)
         ax.set_axisbelow(True)
         ax.xaxis.grid(True)
         ax.yaxis.grid(False)
-    axes[0].set_xlabel("Mean decrease in F1", fontsize=7.6)
-    axes[1].set_xlabel("Mean absolute SHAP value", fontsize=7.6)
-    fig.subplots_adjust(wspace=0.62)
+        ax.tick_params(axis="x", labelsize=7)
+    axes[0].set_xlabel("Mean decrease in F1 ($\\pm$1 SD over permutations)", fontsize=7.2)
+    axes[1].set_xlabel("Mean absolute SHAP value", fontsize=7.2)
+    fig.subplots_adjust(wspace=1.45)
     save(fig, "fig09_importance.png")
 
 
@@ -397,21 +557,35 @@ def fig_ablation():
             "without_interactions": "- categorical interactions"}
     a["label"] = a.variant.map(nice) + " (" + a.n_features.astype(str) + ")"
     base = a[a.variant == "full_selected_features"].f1.iloc[0]
-    a = a.sort_values("f1")
-    fig, ax = plt.subplots(figsize=(6.6, 2.6))
-    cols = [BLUE if v == "full_selected_features" else ORANGE for v in a.variant]
-    bars = ax.barh(range(len(a)), a.f1, color=cols, height=0.62)
-    ax.axvline(base, color=MUTED, linestyle=":", linewidth=1.0)
+    # Plot the change from the full feature set rather than the absolute F1. The
+    # quantity of interest has a sign, so it gets a diverging encoding centred on
+    # zero; the previous version painted every variant the same colour whether
+    # removing the block helped or hurt.
+    a = a[a.variant != "full_selected_features"].copy()
+    a["delta"] = a.f1 - base
+    a = a.sort_values("delta")
+    fig, ax = plt.subplots(figsize=(6.2, 2.5))
+    cols = [ORANGE if d < 0 else BLUE for d in a.delta]
+    bars = ax.barh(range(len(a)), a.delta, color=cols, height=0.62)
+    ax.axvline(0, color=MUTED, linewidth=1.0)
     for i, (rect, row) in enumerate(zip(bars, a.itertuples())):
-        delta = row.f1 - base
-        txt = "%.3f" % row.f1 if row.variant == "full_selected_features" else "%.3f (%+.3f)" % (row.f1, delta)
-        ax.annotate(txt, (rect.get_width(), i), textcoords="offset points",
-                    xytext=(4, 0), va="center", fontsize=7, color=INK)
+        off = 5 if row.delta > 0 else -5
+        ha = "left" if row.delta > 0 else "right"
+        ax.annotate("%+.3f  (F1 %.3f)" % (row.delta, row.f1), (rect.get_width(), i),
+                    textcoords="offset points", xytext=(off, 0), va="center",
+                    ha=ha, fontsize=7, color=INK)
     ax.set_yticks(range(len(a)))
     ax.set_yticklabels(a.label, fontsize=7.4)
-    ax.set_xlabel("F1-score on the 2025 test set (decision threshold 0.50)")
-    ax.set_xlim(0, 0.62)
-    ax.spines[["top", "right"]].set_visible(False)
+    ax.set_xlabel("Change in F1 when the block is removed, against all 74 features\n"
+                  "(untuned LightGBM, 2025 test set, decision threshold 0.50)", fontsize=7.6)
+    ax.set_xlim(-0.105, 0.085)
+    # Direction is already carried by the sign of the axis and by the diverging
+    # fill; these keys stay in ink so that no text borrows a series colour.
+    ax.text(-0.100, len(a) - 0.42, "$\\leftarrow$ removal degrades", fontsize=6.8,
+            color=MUTED, ha="left")
+    ax.text(0.080, len(a) - 0.42, "removal improves $\\rightarrow$", fontsize=6.8,
+            color=MUTED, ha="right")
+    ax.spines[["top", "right", "left"]].set_visible(False)
     ax.set_axisbelow(True)
     ax.xaxis.grid(True)
     ax.yaxis.grid(False)

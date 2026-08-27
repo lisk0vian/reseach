@@ -153,13 +153,13 @@ INPUT C:\Program Files\MiKTeX\tex\latex\00miktex\epstopdf-sys.cfg
 INPUT C:\Program Files\MiKTeX\tex\latex\00miktex\epstopdf-sys.cfg
 INPUT C:\Program Files\MiKTeX\tex\latex\00miktex\epstopdf-sys.cfg
 INPUT C:\Program Files\MiKTeX\tex\latex\graphics\color.sty
-INPUT .\main.out
-INPUT .\main.out
-INPUT main.out
-INPUT main.out
+INPUT D:\papers\research\C15-202610-fiscal\papers\drafts\springer\build\main.out
+INPUT D:\papers\research\C15-202610-fiscal\papers\drafts\springer\build\main.out
+INPUT D:\papers\research\C15-202610-fiscal\papers\drafts\springer\build\main.out
+INPUT D:\papers\research\C15-202610-fiscal\papers\drafts\springer\build\main.out
 OUTPUT D:\papers\research\C15-202610-fiscal\papers\drafts\springer\build\main.pdf
-INPUT .\main.out
-INPUT .\main.out
+INPUT D:\papers\research\C15-202610-fiscal\papers\drafts\springer\build\main.out
+INPUT D:\papers\research\C15-202610-fiscal\papers\drafts\springer\build\main.out
 OUTPUT D:\papers\research\C15-202610-fiscal\papers\drafts\springer\build\main.out
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmr8.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmr17.tfm
@@ -203,6 +203,7 @@ INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm7.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm5.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmr9.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmbx9.tfm
+INPUT C:\Users\Aron\AppData\Local\MiKTeX\fonts\map\pdftex\pdftex.map
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmex10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
@@ -212,7 +213,6 @@ INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam5.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm7.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm5.tfm
-INPUT C:\Users\Aron\AppData\Local\MiKTeX\fonts\map\pdftex\pdftex.map
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmti10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmbx10.tfm
