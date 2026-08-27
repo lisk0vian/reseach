@@ -3,7 +3,7 @@
 **Area**: Maternal & child health · **Status**: `Revision` · **Journal**: Pending decision
 
 **Description:**
-This research examines the persistent issue of justice system congestion in Peru and introduces a reproducible machine learning framework designed to estimate the proxy risk of prosecutorial overload using administrative records from 2019–2026. The study’s principal contribution is the development of a methodological approach that integrates interpretability and reproducibility to strengthen institutional planning. By highlighting territorial and institutional patterns as key drivers of congestion risk, the framework provides a structured basis for evidence‑based decision‑making and supports the preventive prioritization of operational strategies in prosecutorial contexts.
+This research studies early prediction of low birth weight in a national Peruvian cohort from 2015–2025. It presents a reproducible machine learning framework that combines temporal validation, calibration, interpretability, and equity auditing to assess predictive performance before clinical deployment.
 
 ## Research Team
 
@@ -16,6 +16,10 @@ This research examines the persistent issue of justice system congestion in Peru
 * **Jerremi Aron Chancan Labajos** — Co-author
   <br />
    [ORCID](https://orcid.org/) · [Google Scholar](https://scholar.google.com/citations?hl=es&user=wV2fQskAAAAJ) · [LinkedIn](https://www.linkedin.com/in/jeremi-aron/) · [GitHub](https://github.com/lisk0vian)
+
+* **Arnold Albert Huaman Zamora** — Co-author
+  <br />
+  [ORCID](https://orcid.org/0009-0006-8186-9251)
 
 **Affiliation**: [Servicio Nacional de Adiestramiento en Trabajo Industrial, Lima, Perú](https://www.senati.edu.pe/especialidades/tecnologias-de-la-informacion/ingenieria-de-software-con-inteligencia-artificial)
 
@@ -34,6 +38,12 @@ This research examines the persistent issue of justice system congestion in Peru
 **Dataset 1:** [Registros de Nacidos Vivos en el Perú (2015–2025)](https://www.datosabiertos.gob.pe/dataset/registros-de-nacidos-vivos-en-el-per%C3%BA-2015%E2%80%932025)
 
 **Dataset 2:** [Registros de Nacidos Vivos en el Perú 2026](https://www.datosabiertos.gob.pe/dataset/registros-de-nacidos-vivos-en-el-per%C3%BA-2026)
+
+## Reproducibility
+
+The complete analysis pipeline is available in [the research notebook](notebooks/bpn_pipeline.ipynb). The raw consolidated CSV is not committed because it exceeds GitHub's 100 MB file limit; it can be obtained from the official datasets above and placed in the configured data directory before execution.
+
+The methodological review and requested corrections are recorded in [the reviewer feedback](remarks/reviewer-feedback.md).
 
 ## License
 
