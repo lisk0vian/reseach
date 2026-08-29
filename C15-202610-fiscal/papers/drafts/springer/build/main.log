@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.3.30)  24 AUG 2026 19:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.3.30)  26 AUG 2026 20:09
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -430,24 +430,24 @@ File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
 ) (D:\papers\research\C15-202610-fiscal\papers\drafts\springer\build\main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
 \footinsA=\insert252
 \c@footnoteA=\count333
 
@@ -505,548 +505,344 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (C:\Program Files\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-Package hyperref Info: Link coloring ON on input line 21.
- (main.out) (main.out)
+Package hyperref Info: Link coloring ON on input line 33.
+ (D:\papers\research\C15-202610-fiscal\papers\drafts\springer\build\main.out) (D:\papers\research\C15-202610-fiscal\papers\drafts\springer\build\main.out)
 \@outlinefile=\write3
 \openout3 = `main.out'.
 
-LaTeX Font Info:    Calculating math sizes for size <12.045> on input line 36.
+LaTeX Font Info:    Calculating math sizes for size <12.045> on input line 52.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/bx/n' in size <8.43146> not available
-(Font)              size <8> substituted on input line 36.
+(Font)              size <8> substituted on input line 52.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/b/it' in size <8.43146> not available
-(Font)              size <8> substituted on input line 36.
+(Font)              size <8> substituted on input line 52.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/b/n' in size <8.43146> not available
-(Font)              size <8> substituted on input line 36.
+(Font)              size <8> substituted on input line 52.
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 36.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 52.
 (C:\Program Files\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 36.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 52.
  (C:\Program Files\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <8.43146> not available
-(Font)              size <8> substituted on input line 36.
+(Font)              size <8> substituted on input line 52.
 
-LaTeX Font Info:    Calculating math sizes for size <11.04124> on input line 36.
+LaTeX Font Info:    Calculating math sizes for size <11.04124> on input line 52.
 
 LaTeX Font Warning: Font shape `OT1/cmr/bx/n' in size <5.52061> not available
-(Font)              size <6> substituted on input line 36.
+(Font)              size <6> substituted on input line 52.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/b/it' in size <5.52061> not available
-(Font)              size <6> substituted on input line 36.
+(Font)              size <6> substituted on input line 52.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/b/n' in size <5.52061> not available
-(Font)              size <6> substituted on input line 36.
+(Font)              size <6> substituted on input line 52.
 
-LaTeX Font Info:    Calculating math sizes for size <10.03749> on input line 36.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [1
 
 {C:/Users/Aron/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
+LaTeX Font Info:    Calculating math sizes for size <10.03749> on input line 52.
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [2]
-
-LaTeX Warning: Reference `sec:related' on page 3 undefined on input line 53.
-
-
-LaTeX Warning: Reference `sec:methods' on page 3 undefined on input line 53.
-
-
-LaTeX Warning: Reference `sec:results' on page 3 undefined on input line 53.
-
-
-LaTeX Warning: Reference `sec:discussion' on page 3 undefined on input line 53.
-
-
-LaTeX Warning: Reference `sec:limits' on page 3 undefined on input line 53.
-
-
-LaTeX Warning: Reference `sec:conclusions' on page 3 undefined on input line 53.
-
-
-Package natbib Warning: Citation `azaria_alleviating_2024' on page 3 undefined on input line 59.
-
-
-Package natbib Warning: Citation `pernici_improving_2024' on page 3 undefined on input line 59.
-
-
-Package natbib Warning: Citation `vasconcelos_analysis_2023' on page 3 undefined on input line 59.
-
-
-Package natbib Warning: Citation `hannoon_artificial_2025' on page 3 undefined on input line 59.
-
-
-Package natbib Warning: Citation `zhou_efficient_2024' on page 3 undefined on input line 65.
-
-
-Package natbib Warning: Citation `zhou_efficient_2024' on page 3 undefined on input line 65.
-
-
-Package natbib Warning: Citation `moslemi_tutorial-based_2023' on page 3 undefined on input line 65.
-
-
-Package natbib Warning: Citation `kursa_feature_2010' on page 3 undefined on input line 65.
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [3]
-
-Package natbib Warning: Citation `kapoor_leakage_2023' on page 4 undefined on input line 71.
-
-
-Package natbib Warning: Citation `kapoor_leakage_2023' on page 4 undefined on input line 71.
-
-
-Package natbib Warning: Citation `sasse_leakage_2023' on page 4 undefined on input line 71.
-
-
-Package natbib Warning: Citation `hamdan_julearn_2023' on page 4 undefined on input line 71.
-
-
-Package natbib Warning: Citation `chawla_smote_2002' on page 4 undefined on input line 75.
-
-
-Package natbib Warning: Citation `vancalster_calibration_2019' on page 4 undefined on input line 79.
-
-
-Package natbib Warning: Citation `guo_calibration_2017' on page 4 undefined on input line 79.
-
-
-Package natbib Warning: Citation `niculescu_predicting_2005' on page 4 undefined on input line 79.
-
-
-Package natbib Warning: Citation `vickers_decision_2006' on page 4 undefined on input line 79.
-
-
-Package natbib Warning: Citation `collins_tripod_2024' on page 4 undefined on input line 79.
-
-
-Package natbib Warning: Citation `steyerberg_assessing_2010' on page 4 undefined on input line 79.
-
-
-Package natbib Warning: Citation `richmond_explainable_2024' on page 4 undefined on input line 81.
-
-
-Package natbib Warning: Citation `saarela_recent_2024' on page 4 undefined on input line 81.
-
-
-Package natbib Warning: Citation `lundberg_unified_2017' on page 4 undefined on input line 81.
-
-
-Package natbib Warning: Citation `dressel_accuracy_2018' on page 4 undefined on input line 81.
-
-
-Package natbib Warning: Citation `taylor_is_2025' on page 4 undefined on input line 81.
-
-
-LaTeX Warning: Reference `fig:framework' on page 4 undefined on input line 87.
-
-<figures/fig01_framework.png, id=155, 383.9946pt x 270.2898pt>
-File: figures/fig01_framework.png Graphic file (type png)
-<use figures/fig01_framework.png>
-Package pdftex.def Info: figures/fig01_framework.png  used on input line 91.
-(pdftex.def)             Requested size: 319.92023pt x 225.20245pt.
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [4]
 
-Package natbib Warning: Citation `ministerio_publico__fiscalia_de_la_nacion_mpfn_mpfn_2022' on page 5 undefined on input line 97.
+LaTeX Warning: Reference `fig:framework' on page 5 undefined on input line 105.
 
+<figures/fig01_framework.png, id=202, 383.9946pt x 253.6677pt>
+File: figures/fig01_framework.png Graphic file (type png)
+<use figures/fig01_framework.png>
+Package pdftex.def Info: figures/fig01_framework.png  used on input line 109.
+(pdftex.def)             Requested size: 319.92023pt x 211.35309pt.
 
-LaTeX Warning: Reference `tab:dataset' on page 5 undefined on input line 99.
+LaTeX Warning: `h' float specifier changed to `ht'.
 
-LaTeX Font Info:    Calculating math sizes for size <8.03> on input line 103.
+LaTeX Font Info:    Calculating math sizes for size <8.03> on input line 121.
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <4.015> not available
-(Font)              size <5> substituted on input line 103.
+(Font)              size <5> substituted on input line 121.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <4.015> not available
-(Font)              size <5> substituted on input line 103.
+(Font)              size <5> substituted on input line 121.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <4.015> not available
-(Font)              size <5> substituted on input line 103.
-
-
-LaTeX Warning: Reference `sec:target' on page 5 undefined on input line 119.
+(Font)              size <5> substituted on input line 121.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-LaTeX Warning: Reference `sec:target' on page 5 undefined on input line 126.
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [5 <./figures/fig01_framework.png>]
+ [5]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Warning: Reference `tab:availability' on page 6 undefined on input line 128.
+ [6 <./figures/fig01_framework.png>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-
-Underfull \hbox (badness 7344) in paragraph at lines 144--144
+ [7]
+Underfull \hbox (badness 7344) in paragraph at lines 168--168
 []|[]\OT1/cmr/m/n/8 Territorial and insti-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 144--144
+Underfull \hbox (badness 10000) in paragraph at lines 168--168
 \OT1/cmr/m/n/8 tu-tional attributes;
  []
 
 
-Underfull \hbox (badness 1303) in paragraph at lines 144--144
+Underfull \hbox (badness 1303) in paragraph at lines 168--168
 \OT1/cmr/m/n/8 their pair-wise inter-ac-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 144--144
+Underfull \hbox (badness 10000) in paragraph at lines 168--168
 \OT1/cmr/m/n/8 tions; training-fitted
  []
 
 
-Underfull \hbox (badness 2707) in paragraph at lines 145--145
+Underfull \hbox (badness 2707) in paragraph at lines 169--169
 []|[]\OT1/cmr/m/n/8 Lagged annual aggre-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 146--146
+Underfull \hbox (badness 10000) in paragraph at lines 170--170
 []|[]\OT1/cmr/m/n/8 Pandemic-period and
  []
 
 
-Underfull \hbox (badness 5893) in paragraph at lines 147--147
+Underfull \hbox (badness 5893) in paragraph at lines 171--171
 []|[]\OT1/cmr/m/n/8 Cases received; cases
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 149--149
+Underfull \hbox (badness 10000) in paragraph at lines 173--173
 []|[]\OT1/cmr/m/n/8 Proxy-label vari-ants
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 151--151
+Underfull \hbox (badness 10000) in paragraph at lines 175--175
 []|[]\OT1/cmr/m/n/8 Reporting-period
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 151--151
+Underfull \hbox (badness 10000) in paragraph at lines 175--175
 \OT1/cmr/m/n/8 descrip-tor; down-load
  []
 
 
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [6]
-
-LaTeX Warning: Reference `tab:scenarios' on page 7 undefined on input line 164.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [7]
-
-Package natbib Warning: Citation `kursa_feature_2010' on page 8 undefined on input line 193.
+Underfull \hbox (badness 10000) in paragraph at lines 175--175
+\OT1/cmr/m/n/8 date; cut-off date;
+ []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [8]
-
-LaTeX Warning: Reference `fig:protocol' on page 9 undefined on input line 199.
-
-
-LaTeX Warning: Reference `tab:partitions' on page 9 undefined on input line 199.
-
-
-LaTeX Warning: Reference `sec:results' on page 9 undefined on input line 205.
-
-<figures/fig02_protocol.png, id=192, 383.9946pt x 179.9523pt>
-File: figures/fig02_protocol.png Graphic file (type png)
-<use figures/fig02_protocol.png>
-Package pdftex.def Info: figures/fig02_protocol.png  used on input line 213.
-(pdftex.def)             Requested size: 349.68091pt x 163.88039pt.
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-Package natbib Warning: Citation `chen_xgboost_2016' on page 9 undefined on input line 233.
-
-
-Package natbib Warning: Citation `ke_lightgbm_2017' on page 9 undefined on input line 233.
-
-
-Package natbib Warning: Citation `prokhorenkova_catboost_2018' on page 9 undefined on input line 233.
-
-
-Package natbib Warning: Citation `akiba_optuna_2019' on page 9 undefined on input line 233.
-
-
-Package natbib Warning: Citation `pedregosa_scikitlearn_2011' on page 9 undefined on input line 233.
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [9 <./figures/fig02_protocol.png>]
-
-Package natbib Warning: Citation `brier_verification_1950' on page 10 undefined on input line 237.
-
-
-Package natbib Warning: Citation `delong_comparing_1988' on page 10 undefined on input line 237.
-
-
-Package natbib Warning: Citation `mcnemar_note_1947' on page 10 undefined on input line 237.
-
-
-Package natbib Warning: Citation `dietterich_approximate_1998' on page 10 undefined on input line 237.
-
-
-Package natbib Warning: Citation `demsar_statistical_2006' on page 10 undefined on input line 237.
-
-
-Package natbib Warning: Citation `vickers_decision_2006' on page 10 undefined on input line 239.
-
-
-Package natbib Warning: Citation `hardt_equality_2016' on page 10 undefined on input line 245.
-
-
-Package natbib Warning: Citation `vovk_algorithmic_2005' on page 10 undefined on input line 245.
-
-
-Package natbib Warning: Citation `angelopoulos_conformal_2023' on page 10 undefined on input line 245.
-
-
-LaTeX Warning: Reference `tab:software' on page 10 undefined on input line 245.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-LaTeX Warning: Reference `fig:temporal' on page 10 undefined on input line 264.
-
-
+ [9]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [10]
-<figures/fig03_temporal.png, id=210, 425.1885pt x 199.947pt>
-File: figures/fig03_temporal.png Graphic file (type png)
-<use figures/fig03_temporal.png>
-Package pdftex.def Info: figures/fig03_temporal.png  used on input line 268.
-(pdftex.def)             Requested size: 364.55841pt x 171.44765pt.
-
-
-LaTeX Warning: Reference `tab:models' on page 11 undefined on input line 274.
-
+<figures/fig02_protocol.png, id=271, 361.5909pt x 179.9523pt>
+File: figures/fig02_protocol.png Graphic file (type png)
+<use figures/fig02_protocol.png>
+Package pdftex.def Info: figures/fig02_protocol.png  used on input line 239.
+(pdftex.def)             Requested size: 349.68091pt x 174.03728pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [11 <./figures/fig03_temporal.png>]
-
-LaTeX Warning: Reference `fig:walkforward' on page 12 undefined on input line 305.
-
-
-LaTeX Warning: Reference `tab:models' on page 12 undefined on input line 305.
-
-<figures/fig04_walkforward.png, id=218, 416.757pt x 189.5883pt>
-File: figures/fig04_walkforward.png Graphic file (type png)
-<use figures/fig04_walkforward.png>
-Package pdftex.def Info: figures/fig04_walkforward.png  used on input line 309.
-(pdftex.def)             Requested size: 334.79773pt x 152.30438pt.
+ [11 <./figures/fig02_protocol.png>]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-LaTeX Warning: Reference `fig:learning' on page 12 undefined on input line 313.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [12]
-<figures/fig05_learning_curve.png, id=225, 416.757pt x 186.4566pt>
-File: figures/fig05_learning_curve.png Graphic file (type png)
-<use figures/fig05_learning_curve.png>
-Package pdftex.def Info: figures/fig05_learning_curve.png  used on input line 317.
-(pdftex.def)             Requested size: 334.79773pt x 149.78856pt.
+<figures/fig03_temporal.png, id=311, 422.2977pt x 199.947pt>
+File: figures/fig03_temporal.png Graphic file (type png)
+<use figures/fig03_temporal.png>
+Package pdftex.def Info: figures/fig03_temporal.png  used on input line 300.
+(pdftex.def)             Requested size: 364.55841pt x 172.61311pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [13 <./figures/fig04_walkforward.png> <./figures/fig05_learning_curve.png>]
-
-LaTeX Warning: Reference `tab:thresholds' on page 14 undefined on input line 325.
-
-
-LaTeX Warning: Reference `tab:final' on page 14 undefined on input line 342.
-
-
-LaTeX Warning: Reference `tab:calibration' on page 14 undefined on input line 365.
-
-
-LaTeX Warning: Reference `fig:calibration' on page 14 undefined on input line 365.
-
-
+ [13 <./figures/fig03_temporal.png>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [14]
+<figures/fig04_walkforward.png, id=332, 422.0568pt x 300.8841pt>
+File: figures/fig04_walkforward.png Graphic file (type png)
+<use figures/fig04_walkforward.png>
+Package pdftex.def Info: figures/fig04_walkforward.png  used on input line 347.
+(pdftex.def)             Requested size: 297.60114pt x 212.16922pt.
 
-LaTeX Font Warning: Font shape `OT1/cmr/bx/n' in size <4.015> not available
-(Font)              size <5> substituted on input line 380.
 
+LaTeX Warning: `h' float specifier changed to `ht'.
 
-Overfull \hbox (23.87836pt too wide) in paragraph at lines 367--386
- [] 
- []
+<figures/fig05_learning_curve.png, id=334, 416.757pt x 186.4566pt>
+File: figures/fig05_learning_curve.png Graphic file (type png)
+<use figures/fig05_learning_curve.png>
+Package pdftex.def Info: figures/fig05_learning_curve.png  used on input line 355.
+(pdftex.def)             Requested size: 334.79773pt x 149.78856pt.
 
-<figures/fig06_calibration.png, id=243, 440.3652pt x 221.3871pt>
-File: figures/fig06_calibration.png Graphic file (type png)
-<use figures/fig06_calibration.png>
-Package pdftex.def Info: figures/fig06_calibration.png  used on input line 390.
-(pdftex.def)             Requested size: 364.55841pt x 183.28168pt.
+LaTeX Warning: `h' float specifier changed to `ht'.
+
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [15 <./figures/fig06_calibration.png>]
+ [15]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Warning: Reference `sec:strata' on page 16 undefined on input line 396.
+ [16 <./figures/fig04_walkforward.png>]
+Overfull \hbox (11.49426pt too wide) in paragraph at lines 382--399
+ [] 
+ []
 
 
-LaTeX Warning: Reference `tab:strata' on page 16 undefined on input line 400.
+LaTeX Font Warning: Font shape `OT1/cmr/bx/n' in size <4.015> not available
+(Font)              size <5> substituted on input line 418.
 
 
-LaTeX Warning: Reference `fig:strata' on page 16 undefined on input line 400.
+LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figures/fig07_risk_strata.png, id=251, 414.1071pt x 205.0059pt>
+<figures/fig06_calibration.png, id=354, 467.8278pt x 211.7511pt>
+File: figures/fig06_calibration.png Graphic file (type png)
+<use figures/fig06_calibration.png>
+Package pdftex.def Info: figures/fig06_calibration.png  used on input line 428.
+(pdftex.def)             Requested size: 364.55841pt x 165.01332pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [17 <./figures/fig05_learning_curve.png>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [18 <./figures/fig06_calibration.png>]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<figures/fig07_risk_strata.png, id=371, 414.1071pt x 205.0059pt>
 File: figures/fig07_risk_strata.png Graphic file (type png)
 <use figures/fig07_risk_strata.png>
-Package pdftex.def Info: figures/fig07_risk_strata.png  used on input line 421.
+Package pdftex.def Info: figures/fig07_risk_strata.png  used on input line 463.
 (pdftex.def)             Requested size: 364.55841pt x 180.4808pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-LaTeX Warning: Reference `sec:calibration' on page 16 undefined on input line 425.
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [16]
+ [19]
 
-LaTeX Warning: Reference `fig:dca' on page 17 undefined on input line 429.
+LaTeX Warning: `h' float specifier changed to `ht'.
 
-
-LaTeX Warning: Reference `tab:dca' on page 17 undefined on input line 429.
-
-
-LaTeX Warning: Reference `eq:nb' on page 17 undefined on input line 429.
-
-
-LaTeX Warning: Reference `tab:final' on page 17 undefined on input line 448.
-
-<figures/fig08_decision_curve.png, id=257, 429.2838pt x 210.3057pt>
+<figures/fig08_decision_curve.png, id=385, 429.2838pt x 210.3057pt>
 File: figures/fig08_decision_curve.png Graphic file (type png)
 <use figures/fig08_decision_curve.png>
-Package pdftex.def Info: figures/fig08_decision_curve.png  used on input line 453.
+Package pdftex.def Info: figures/fig08_decision_curve.png  used on input line 495.
 (pdftex.def)             Requested size: 342.23932pt x 167.66074pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-LaTeX Warning: Reference `tab:final' on page 17 undefined on input line 457.
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [17 <./figures/fig07_risk_strata.png>]
+ [20 <./figures/fig07_risk_strata.png>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Package natbib Warning: Citation `lundberg_unified_2017' on page 18 undefined on input line 463.
-
-
-LaTeX Warning: Reference `fig:importance' on page 18 undefined on input line 463.
-
-<figures/fig09_importance.png, id=266, 508.5399pt x 262.8219pt>
+ [21 <./figures/fig08_decision_curve.png>]
+<figures/fig09_importance.png, id=402, 476.5002pt x 261.8583pt>
 File: figures/fig09_importance.png Graphic file (type png)
 <use figures/fig09_importance.png>
-Package pdftex.def Info: figures/fig09_importance.png  used on input line 467.
-(pdftex.def)             Requested size: 364.55841pt x 188.40948pt.
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
+Package pdftex.def Info: figures/fig09_importance.png  used on input line 509.
+(pdftex.def)             Requested size: 364.55841pt x 200.3529pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [18 <./figures/fig08_decision_curve.png>]
-
-LaTeX Warning: Reference `fig:ablation' on page 19 undefined on input line 473.
-
-<figures/fig10_ablation.png, id=273, 502.5174pt x 186.4566pt>
+ [22 <./figures/fig09_importance.png>]
+<figures/fig10_ablation.png, id=412, 480.1137pt x 197.7789pt>
 File: figures/fig10_ablation.png Graphic file (type png)
 <use figures/fig10_ablation.png>
-Package pdftex.def Info: figures/fig10_ablation.png  used on input line 477.
-(pdftex.def)             Requested size: 334.79773pt x 124.22823pt.
+Package pdftex.def Info: figures/fig10_ablation.png  used on input line 521.
+(pdftex.def)             Requested size: 334.79773pt x 137.92218pt.
 
-LaTeX Warning: `h' float specifier changed to `ht'.
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [23 <./figures/fig10_ablation.png>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [24]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [25]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [26]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [27]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [28] (D:\papers\research\C15-202610-fiscal\papers\drafts\springer\build\main.bbl
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [29]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [30]
+Underfull \hbox (badness 10000) in paragraph at lines 162--168
+[]\OT1/cmr/m/n/10 Ministerio P^^Sublico -- Fisc^^Sal^^S^^Pa de la Naci^^Son (MPFN).  [MPFN]
+ []
+
+
+Underfull \hbox (badness 3148) in paragraph at lines 162--168
+\OT1/cmr/m/n/10 Casos fis-cales -- Plataforma Nacional de Datos Abier-tos.  Plataforma
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 162--168
+\OT1/cmr/m/n/10 Nacional de Datos Abier-tos. 2022 4;Dataset. Avail-able from:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 162--168
+\OT1/cmr/m/n/10 https://www.datosabiertos.gob.pe/dataset/mpfn-casos-fiscales. Accessed 25
+ []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [19 <./figures/fig09_importance.png>]
-
-Package natbib Warning: Citation `vovk_algorithmic_2005' on page 20 undefined on input line 485.
-
-
+ [31])
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [20 <./figures/fig10_ablation.png>]
-
-LaTeX Warning: Reference `tab:models' on page 21 undefined on input line 507.
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [21]
-
-LaTeX Warning: Reference `sec:strata' on page 22 undefined on input line 517.
-
-
-LaTeX Warning: Reference `sec:discussion' on page 22 undefined on input line 517.
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [22]
-
-Package hyperref Warning: Difference (4) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 537.
-
-(D:\papers\research\C15-202610-fiscal\papers\drafts\springer\build\main.bbl)
-
-Package natbib Warning: There were undefined citations.
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [23] (D:\papers\research\C15-202610-fiscal\papers\drafts\springer\build\main.aux)
+ [32] (D:\papers\research\C15-202610-fiscal\papers\drafts\springer\build\main.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-12-24>
@@ -1059,24 +855,21 @@ LaTeX Font Warning: Size substitutions with differences
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: F58C413BAB800DC89E66AAFF74DC2EF2;6869.
+(rerunfilecheck)             Checksum: 71379CD231BB0E27D9CF25B1C9DA1149;7295.
  ) 
 Here is how much of TeX's memory you used:
- 12783 strings out of 467871
- 192784 string characters out of 5428446
- 627637 words of memory out of 5000000
- 41366 multiletter control sequences out of 15000+600000
+ 12931 strings out of 467871
+ 196957 string characters out of 5428446
+ 629100 words of memory out of 5000000
+ 41470 multiletter control sequences out of 15000+600000
  646264 words of font info for 114 fonts, out of 8000000 for 9000
  1151 hyphenation exceptions out of 8191
- 90i,13n,93p,1849b,478s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 90i,13n,93p,2129b,637s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx9.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmti8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on D:\papers\research\C15-202610-fiscal\papers\drafts\springer\build\main.pdf (23 pages, 1366454 bytes).
+Output written on D:\papers\research\C15-202610-fiscal\papers\drafts\springer\build\main.pdf (32 pages, 1511002 bytes).
 PDF statistics:
- 413 PDF objects out of 1000 (max. 8388607)
- 86 named destinations out of 1000 (max. 500000)
- 307 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 618 PDF objects out of 1000 (max. 8388607)
+ 130 named destinations out of 1000 (max. 500000)
+ 315 words of extra memory for PDF output out of 10000 (max. 10000000)
 

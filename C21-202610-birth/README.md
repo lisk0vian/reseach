@@ -7,6 +7,8 @@ This project develops a reproducible machine-learning pipeline for the early pre
 
 The complete analysis is designed to run in Google Colab with data stored in Google Drive. The source dataset is not included in this repository because of its size and data-governance requirements; download it from the official source listed below.
 
+This research studies early prediction of low birth weight in a national Peruvian cohort from 2015–2025. It presents a reproducible machine learning framework that combines temporal validation, calibration, interpretability, and equity auditing to assess predictive performance before clinical deployment.
+
 ## Research Team
 
 ### Authors
@@ -18,6 +20,10 @@ The complete analysis is designed to run in Google Colab with data stored in Goo
 * **Jerremi Aron Chancan Labajos** — Co-author
   <br />
    [ORCID](https://orcid.org/) · [Google Scholar](https://scholar.google.com/citations?hl=es&user=wV2fQskAAAAJ) · [LinkedIn](https://www.linkedin.com/in/jeremi-aron/) · [GitHub](https://github.com/lisk0vian)
+
+* **Arnold Albert Huaman Zamora** — Co-author
+  <br />
+  [ORCID](https://orcid.org/0009-0006-8186-9251)
 
 **Affiliation**: [Servicio Nacional de Adiestramiento en Trabajo Industrial, Lima, Perú](https://www.senati.edu.pe/especialidades/tecnologias-de-la-informacion/ingenieria-de-software-con-inteligencia-artificial)
 
@@ -42,8 +48,16 @@ The complete analysis is designed to run in Google Colab with data stored in Goo
 * [`notebooks/early_prediction_colab.ipynb`](notebooks/early_prediction_colab.ipynb) — complete Colab pipeline and results viewer.
 * [`correction_objectives.md`](correction_objectives.md) — objectives for the methodological correction.
 * [`references.bib`](references.bib) — BibTeX references for the data sources.
+* [`C03-202610-Nacimiento_CORREGIDO.docx`](C03-202610-Nacimiento_CORREGIDO.docx) — corrected manuscript in Word format.
+* [`C03-202610-Nacimiento_CORREGIDO.pdf`](C03-202610-Nacimiento_CORREGIDO.pdf) — PDF export for review and distribution.
 
 Generated PDFs, figures, tables, and model binaries should be added only when they are available and reproducible from the notebook. They are intentionally not fabricated or committed from an unexecuted local run.
+
+## Reproducibility
+
+The complete analysis pipeline is available in [the research notebook](notebooks/bpn_pipeline.ipynb). The raw consolidated CSV is not committed because it exceeds GitHub's 100 MB file limit; it can be obtained from the official datasets above and placed in the configured data directory before execution.
+
+The methodological review and requested corrections are recorded in [the reviewer feedback](remarks/reviewer-feedback.md).
 
 ## License
 

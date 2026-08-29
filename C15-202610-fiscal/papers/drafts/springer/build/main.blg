@@ -2,52 +2,51 @@ This is BibTeX, Version 0.99e
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: main.aux
 Reallocating 'name_of_file' (item size: 1) to 13 items.
-I couldn't open style file sn-vancouver.bst
----line 2 of file main.aux
- : \bibstyle{sn-vancouver
- :                       }
-I'm skipping whatever remains of this command
+The style file: sn-vancouver.bst
 Reallocating 'name_of_file' (item size: 1) to 11 items.
-I found no style file---while reading file main.aux
-You've used 36 entries,
-            0 wiz_defined-function locations,
-            121 strings with 1308 characters,
-and the built_in function-call counts, 0 in all, are:
-= -- 0
-> -- 0
-< -- 0
-+ -- 0
-- -- 0
-* -- 0
-:= -- 0
-add.period$ -- 0
-call.type$ -- 0
-change.case$ -- 0
+Reallocating 'glb_str_end' (item size: 4) to 20 items.
+Reallocating 'glb_str_ptr' (item size: 4) to 20 items.
+Reallocating 'global_strs' (item size: 1) to 4000000 items.
+Reallocating 'wiz_functions' (item size: 4) to 6000 items.
+Database file #1: references.bib
+You've used 32 entries,
+            3503 wiz_defined-function locations,
+            920 strings with 12722 characters,
+and the built_in function-call counts, 62547 in all, are:
+= -- 7747
+> -- 504
+< -- 9
++ -- 266
+- -- 118
+* -- 5204
+:= -- 6694
+add.period$ -- 137
+call.type$ -- 32
+change.case$ -- 17
 chr.to.int$ -- 0
-cite$ -- 0
-duplicate$ -- 0
-empty$ -- 0
-format.name$ -- 0
-if$ -- 0
+cite$ -- 32
+duplicate$ -- 5026
+empty$ -- 6032
+format.name$ -- 199
+if$ -- 14607
 int.to.chr$ -- 0
-int.to.str$ -- 0
-missing$ -- 0
-newline$ -- 0
-num.names$ -- 0
-pop$ -- 0
-preamble$ -- 0
+int.to.str$ -- 32
+missing$ -- 364
+newline$ -- 182
+num.names$ -- 66
+pop$ -- 664
+preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 0
+skip$ -- 641
 stack$ -- 0
-substring$ -- 0
-swap$ -- 0
-text.length$ -- 0
+substring$ -- 12189
+swap$ -- 908
+text.length$ -- 9
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 0
-width$ -- 0
-write$ -- 0
-(There were 2 error messages)
+while$ -- 314
+width$ -- 34
+write$ -- 519
