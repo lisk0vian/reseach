@@ -1,5 +1,13 @@
+data/
 *.csv
+*.xlsx
+*.xls
+*.pkl
+*.joblib
+*.zip
 *.parquet
 *.feather
+figures/generated/
+reports/generated/
 outputs/
 reproducibility/

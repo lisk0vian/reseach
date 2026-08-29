@@ -1,8 +1,12 @@
 # Early Prediction of Low Birth Weight: Characterizing Predictive Performance in a National Peruvian Cohort (2015–2025)
 
-**Area**: Maternal & child health · **Status**: `Revision` · **Journal**: Pending decision
+**Area**: Maternal and perinatal health · **Status**: `Revision` · **Journal**: Pending decision
 
 **Description:**
+This project develops a reproducible machine-learning pipeline for the early prediction of low birth weight using a national Peruvian live-birth cohort from 2015–2025. The revision addresses the clinical prediction time point, information leakage, data partitioning, calibration, risk stratification, decision-curve interpretation, and independent validation of proposed risk categories.
+
+The complete analysis is designed to run in Google Colab with data stored in Google Drive. The source dataset is not included in this repository because of its size and data-governance requirements; download it from the official source listed below.
+
 This research studies early prediction of low birth weight in a national Peruvian cohort from 2015–2025. It presents a reproducible machine learning framework that combines temporal validation, calibration, interpretability, and equity auditing to assess predictive performance before clinical deployment.
 
 ## Research Team
@@ -38,6 +42,16 @@ This research studies early prediction of low birth weight in a national Peruvia
 **Dataset 1:** [Registros de Nacidos Vivos en el Perú (2015–2025)](https://www.datosabiertos.gob.pe/dataset/registros-de-nacidos-vivos-en-el-per%C3%BA-2015%E2%80%932025)
 
 **Dataset 2:** [Registros de Nacidos Vivos en el Perú 2026](https://www.datosabiertos.gob.pe/dataset/registros-de-nacidos-vivos-en-el-per%C3%BA-2026)
+
+## Contents
+
+* [`notebooks/early_prediction_colab.ipynb`](notebooks/early_prediction_colab.ipynb) — complete Colab pipeline and results viewer.
+* [`correction_objectives.md`](correction_objectives.md) — objectives for the methodological correction.
+* [`references.bib`](references.bib) — BibTeX references for the data sources.
+* [`C03-202610-Nacimiento_CORREGIDO.docx`](C03-202610-Nacimiento_CORREGIDO.docx) — corrected manuscript in Word format.
+* [`C03-202610-Nacimiento_CORREGIDO.pdf`](C03-202610-Nacimiento_CORREGIDO.pdf) — PDF export for review and distribution.
+
+Generated PDFs, figures, tables, and model binaries should be added only when they are available and reproducible from the notebook. They are intentionally not fabricated or committed from an unexecuted local run.
 
 ## Reproducibility
 
